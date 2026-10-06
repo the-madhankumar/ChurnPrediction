@@ -1,0 +1,5 @@
+INFO:     127.0.0.1:54351 - "GET /customer/7590VHVEG HTTP/1.1" 404 Not Found
+
+{
+  "detail": "Customer not found"
+}

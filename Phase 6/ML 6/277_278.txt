@@ -1,0 +1,30 @@
+(venv) PS D:\Training Project\Project 1\Phase 6\ML 6> python batch_score.py
+Customers loaded: 7043
+
+Saved to customer_risk_table
+
+CHURN RISK SUMMARY
+==================================================
+prediction
+Unlikely to churn    7043
+Name: count, dtype: int64
+
+Likely to churn:   0
+Unlikely to churn: 7043
+Total customers:   7043
+Predicted churn:   0.00%
+
+TOP 10 HIGHEST-RISK CUSTOMERS
+============================================================
+customer_id  risk_score        prediction  confidence
+ 9318-NKNFC    0.009810 Unlikely to churn    0.990190
+ 8992-CEUEN    0.009810 Unlikely to churn    0.990190
+ 9975-SKRNR    0.009809 Unlikely to churn    0.990191
+ 1423-BMPBQ    0.009809 Unlikely to churn    0.990191
+ 1015-OWJKI    0.009808 Unlikely to churn    0.990192
+ 6569-KTMDU    0.009808 Unlikely to churn    0.990192
+ 6121-VZNQB    0.009808 Unlikely to churn    0.990192
+ 9441-QHEVC    0.009808 Unlikely to churn    0.990192
+ 7302-ZHMHP    0.009807 Unlikely to churn    0.990193
+ 1663-MHLHE    0.009807 Unlikely to churn    0.990193
+(venv) PS D:\Training Project\Project 1\Phase 6\ML 6> 

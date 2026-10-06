@@ -1,0 +1,9 @@
+#115 - Return all engineered features: service_count, tenure_bucket, high_charge_flag, is_long_term_customer, has_streaming_bundle, auto_pay_flag, monthly_charges, total_charges  BY Response Model
+@router.get("/customers/{customer_id}/features", response_model=CustomerFeatures)
+async def get_customer_features(customer_id: str, db: AsyncSession = Depends(get_db)):
+    record = db.get(CustomerMLFeatures, customer_id)
+
+    if not record:
+        raise HTTPException(status_code=404, detail="Customer not found")
+
+    return record

@@ -1,0 +1,46 @@
+(venv) PS D:\Training Project\Project 1\Phase 4> npm create vite@latest CustomerIntelligence
+Need to install the following packages:
+create-vite@9.1.2
+Ok to proceed? (y) y
+
+> npx
+> create-vite CustomerIntelligence
+
+│
+◇  Package name:
+│  customerintelligence
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  JavaScript
+│
+◇  Which linter to use?
+│  ESLint
+│
+◇  Install with npm and start now?
+│  Yes
+│
+◇  Scaffolding project in D:\Training Project\Project 1\Phase 4\CustomerIntelligence...
+│
+◇  Installing dependencies with npm...
+
+added 135 packages, and audited 136 packages in 31s
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+│
+◇  Starting dev server...
+
+> customerintelligence@0.0.0 dev
+> vite
+
+
+  VITE v8.2.1  ready in 859 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help

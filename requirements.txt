@@ -1,0 +1,7 @@
+pandas
+fastapi[standard]
+sqlalchemy
+dotenv
+pydantic
+pymysql
+logging

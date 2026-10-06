@@ -1,0 +1,115 @@
+mysql> describe stg_customer_raw;
++------------------+--------+------+-----+---------+-------+
+| Field            | Type   | Null | Key | Default | Extra |
++------------------+--------+------+-----+---------+-------+
+| customerID       | text   | YES  |     | NULL    |       |
+| gender           | text   | YES  |     | NULL    |       |
+| SeniorCitizen    | bigint | YES  |     | NULL    |       |
+| Partner          | text   | YES  |     | NULL    |       |
+| Dependents       | text   | YES  |     | NULL    |       |
+| tenure           | bigint | YES  |     | NULL    |       |
+| PhoneService     | text   | YES  |     | NULL    |       |
+| MultipleLines    | text   | YES  |     | NULL    |       |
+| InternetService  | text   | YES  |     | NULL    |       |
+| OnlineSecurity   | text   | YES  |     | NULL    |       |
+| OnlineBackup     | text   | YES  |     | NULL    |       |
+| DeviceProtection | text   | YES  |     | NULL    |       |
+| TechSupport      | text   | YES  |     | NULL    |       |
+| StreamingTV      | text   | YES  |     | NULL    |       |
+| StreamingMovies  | text   | YES  |     | NULL    |       |
+| Contract         | text   | YES  |     | NULL    |       |
+| PaperlessBilling | text   | YES  |     | NULL    |       |
+| PaymentMethod    | text   | YES  |     | NULL    |       |
+| MonthlyCharges   | double | YES  |     | NULL    |       |
+| TotalCharges     | text   | YES  |     | NULL    |       |
+| Churn            | text   | YES  |     | NULL    |       |
++------------------+--------+------+-----+---------+-------+
+21 rows in set (0.01 sec)
+
+mysql> INSERT INTO stg_customer_raw (
+    ->     customerID,
+    ->     gender,
+    ->     SeniorCitizen,
+    ->     Partner,
+    ->     Dependents,
+    ->     tenure,
+    ->     PhoneService,
+    ->     MultipleLines,
+    ->     InternetService,
+    ->     OnlineSecurity,
+    ->     OnlineBackup,
+    ->     DeviceProtection,
+    ->     TechSupport,
+    ->     StreamingTV,
+    ->     StreamingMovies,
+    ->     Contract,
+    ->     PaperlessBilling,
+    ->     PaymentMethod,
+    ->     MonthlyCharges,
+    ->     TotalCharges,
+    ->     Churn
+    -> )
+    -> VALUES (
+    ->     'TEST001',
+    ->     'Male',
+    ->     0,
+    ->     'Yes',
+    ->     'No',
+    ->     12,
+    ->     'Yes',
+    ->     'No',
+    ->     'DSL',
+    ->     'No',
+    ->     'Yes',
+    ->     'No',
+    ->     'No',
+    ->     'Yes',
+    ->     'Yes',
+    ->     'One year',
+    ->     'Yes',
+    ->     'Bank transfer (automatic)',
+    ->     65.50,
+    ->     '786.00',
+    ->     'No'
+    -> );
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from dim_payment
+    -> ;
++-------------+---------------------------+
+| payment_key | payment_method            |
++-------------+---------------------------+
+|           3 | Bank transfer (automatic) |
+|           4 | Credit card (automatic)   |
+|           1 | Electronic check          |
+|           2 | Mailed check              |
++-------------+---------------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from dim_contract;
++--------------+----------------+
+| contract_key | contract_type  |
++--------------+----------------+
+|            1 | Month-to-month |
+|            2 | One year       |
+|            3 | Two year       |
++--------------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*) FROM stg_customer_raw;
++----------+
+| COUNT(*) |
++----------+
+|     7044 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select count(*) from customers;
++----------+
+| count(*) |
++----------+
+|     7044 |
++----------+
+1 row in set (0.01 sec)
+
+mysql>

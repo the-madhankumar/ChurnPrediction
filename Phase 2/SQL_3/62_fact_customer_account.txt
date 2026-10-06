@@ -1,0 +1,44 @@
+mysql> CREATE TABLE fact_customer_account (
+    -> customer_id VARCHAR(20) PRIMARY KEY,
+    -> contract_key INT,
+    -> payment_key INT,
+    -> tenure INT,
+    -> monthly_charges DECIMAL(10, 2),
+    -> total_charges DECIMAL(10, 2),
+    -> churn BOOLEAN,
+    -> FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    -> FOREIGN KEY (contract_key) REFERENCES dim_contract(contract_key),
+    -> FOREIGN KEY (payment_key) REFERENCES dim_payment(payment_key));
+Query OK, 0 rows affected (0.18 sec)
+
+mysql> INSERT INTO fact_customer_account (
+    -> customer_id,
+    -> contract_key,
+    -> payment_key,
+    -> tenure,
+    -> monthly_charges,
+    -> total_charges,
+    -> churn
+    -> )
+    -> SELECT
+    -> s.customerID,
+    -> c.contract_key,
+    -> p.payment_key,
+    -> s.tenure,
+    -> s.MonthlyCharges,
+    -> CASE
+    -> WHEN TRIM(s.TotalCharges) = '' THEN NULL
+    -> ELSE CAST(TRIM(s.TotalCharges) AS DECIMAL(10,2))
+    -> END,
+    -> CASE
+    -> WHEN s.Churn = 'Yes' THEN 1
+    -> WHEN s.Churn = 'No' THEN 0
+    -> ELSE NULL
+    -> END
+    -> FROM stg_customer_raw AS s
+    -> JOIN dim_contract AS c
+    -> ON s.Contract = c.contract_type
+    -> JOIN dim_payment AS p
+    -> ON s.PaymentMethod = p.payment_method;
+Query OK, 7043 rows affected (0.86 sec)
+Records: 7043  Duplicates: 0  Warnings: 0

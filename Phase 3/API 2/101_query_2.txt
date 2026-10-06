@@ -1,0 +1,16 @@
+Query: churn rate by contract type (list of {contract_type, 
+churn_rate}) 
+
+{
+  "contract_type": [
+    {
+      "Month-to-month": 42.7097
+    },
+    {
+      "One year": 11.2695
+    },
+    {
+      "Two year": 2.8319
+    }
+  ]
+}

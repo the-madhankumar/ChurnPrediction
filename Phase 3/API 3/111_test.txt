@@ -1,0 +1,94 @@
+{
+  "Records": [
+    {
+      "monthly_charges": 73.9,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 4,
+      "contract_type": "Month-to-month",
+      "customer_id": "0004-TLHLJ"
+    },
+    {
+      "monthly_charges": 83.9,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 3,
+      "contract_type": "Month-to-month",
+      "customer_id": "0013-EXCHZ"
+    },
+    {
+      "monthly_charges": 68.95,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 5,
+      "contract_type": "Month-to-month",
+      "customer_id": "0018-NYROU"
+    },
+    {
+      "monthly_charges": 72.1,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 1,
+      "contract_type": "Month-to-month",
+      "customer_id": "0021-IKXGC"
+    },
+    {
+      "monthly_charges": 99.75,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 1,
+      "contract_type": "Month-to-month",
+      "customer_id": "0107-YHINA"
+    },
+    {
+      "monthly_charges": 86.25,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 2,
+      "contract_type": "Month-to-month",
+      "customer_id": "0133-BMFZO"
+    },
+    {
+      "monthly_charges": 80.2,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 1,
+      "contract_type": "Month-to-month",
+      "customer_id": "0137-OCGAB"
+    },
+    {
+      "monthly_charges": 90.35,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 2,
+      "contract_type": "Month-to-month",
+      "customer_id": "0139-IVFJG"
+    },
+    {
+      "monthly_charges": 70.9,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 1,
+      "contract_type": "Month-to-month",
+      "customer_id": "0151-ONTOV"
+    },
+    {
+      "monthly_charges": 84.35,
+      "risk_reason": "Month-to-month contract, tenure < 12, monthly charges above average",
+      "tenure": 6,
+      "contract_type": "Month-to-month",
+      "customer_id": "0196-VULGZ"
+    }
+  ]
+}
+
+
+mysql> select * from v_high_risk_customers where tenure < 7 limit 10;
++-------------+--------+----------------+-----------------+---------------------------------------------------------------------+
+| customer_id | tenure | contract_type  | monthly_charges | risk_reason                                                         |
++-------------+--------+----------------+-----------------+---------------------------------------------------------------------+
+| 0004-TLHLJ  |      4 | Month-to-month |           73.90 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0013-EXCHZ  |      3 | Month-to-month |           83.90 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0018-NYROU  |      5 | Month-to-month |           68.95 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0021-IKXGC  |      1 | Month-to-month |           72.10 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0107-YHINA  |      1 | Month-to-month |           99.75 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0133-BMFZO  |      2 | Month-to-month |           86.25 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0137-OCGAB  |      1 | Month-to-month |           80.20 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0139-IVFJG  |      2 | Month-to-month |           90.35 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0151-ONTOV  |      1 | Month-to-month |           70.90 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0196-VULGZ  |      6 | Month-to-month |           84.35 | Month-to-month contract, tenure < 12, monthly charges above average |
++-------------+--------+----------------+-----------------+---------------------------------------------------------------------+
+10 rows in set (0.01 sec)
+
+mysql>

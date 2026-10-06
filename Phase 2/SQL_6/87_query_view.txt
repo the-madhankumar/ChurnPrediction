@@ -1,0 +1,20 @@
+
+mysql> SELECT * FROM v_high_risk_customers
+    -> LIMIT 10;
++-------------+--------+----------------+-----------------+---------------------------------------------------------------------+
+| customer_id | tenure | contract_type  | monthly_charges | risk_reason                                                         |
++-------------+--------+----------------+-----------------+---------------------------------------------------------------------+
+| 0004-TLHLJ  |      4 | Month-to-month |           73.90 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0013-EXCHZ  |      3 | Month-to-month |           83.90 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0013-MHZWF  |      9 | Month-to-month |           69.40 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0018-NYROU  |      5 | Month-to-month |           68.95 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0021-IKXGC  |      1 | Month-to-month |           72.10 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0094-OIFMO  |     11 | Month-to-month |           95.00 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0107-YHINA  |      1 | Month-to-month |           99.75 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0122-OAHPZ  |      7 | Month-to-month |           73.85 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0133-BMFZO  |      2 | Month-to-month |           86.25 | Month-to-month contract, tenure < 12, monthly charges above average |
+| 0137-OCGAB  |      1 | Month-to-month |           80.20 | Month-to-month contract, tenure < 12, monthly charges above average |
++-------------+--------+----------------+-----------------+---------------------------------------------------------------------+
+10 rows in set (0.01 sec)
+
+mysql>

@@ -1,0 +1,31 @@
+.churn-card {
+  width: 400px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.churn-card p {
+  margin: 10px 0;
+}
+
+.churn_containers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.churn-bar-container {
+  width: 300px;
+  height: 15px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.churn-bar {
+  height: 100%;
+  background: red;
+}

@@ -1,0 +1,26 @@
+{
+  "service_count": 1,
+  "high_charge_flag": true,
+  "is_long_term_customer": false,
+  "auto_pay_flag": false,
+  "tenure_bucket": "0-12",
+  "has_streaming_bundle": false
+}
+
+mysql> SELECT
+    -> service_count,
+    -> high_charge_flag,
+    -> is_long_term_customer,
+    -> auto_pay_flag,
+    -> tenure_bucket,
+    -> has_streaming_bundle
+    -> FROM customer_ml_features
+    -> WHERE customer_id = "0004-TLHLJ";
++---------------+------------------+-----------------------+---------------+---------------+----------------------+
+| service_count | high_charge_flag | is_long_term_customer | auto_pay_flag | tenure_bucket | has_streaming_bundle |
++---------------+------------------+-----------------------+---------------+---------------+----------------------+
+|             1 |                1 |                     0 |             0 | 0-12          |                    0 |
++---------------+------------------+-----------------------+---------------+---------------+----------------------+
+1 row in set (0.01 sec)
+
+mysql>

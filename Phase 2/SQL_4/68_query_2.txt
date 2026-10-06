@@ -1,0 +1,10 @@
+mysql> SELECT payment_method, AVG(churn) AS churn_rate FROM fact_customer_account JOIN dim_payment GROUP BY payment_method ORDER BY churn_rate DESC;
++---------------------------+------------+
+| payment_method            | churn_rate |
++---------------------------+------------+
+| Mailed check              |     0.2654 |
+| Electronic check          |     0.2654 |
+| Credit card (automatic)   |     0.2654 |
+| Bank transfer (automatic) |     0.2654 |
++---------------------------+------------+
+4 rows in set (0.03 sec)

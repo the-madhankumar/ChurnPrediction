@@ -1,0 +1,15 @@
+file = D:\Training Project\Project 1\Phase 4\CustomerIntelligence\src\App.jsx
+
+  useEffect(() => {
+   const getRecords = async () => {
+      try {
+        console.log(BASE_URL)
+        const response = await axios.get(`${BASE_URL}/churn/summary`)
+        console.log(response.data)
+      } catch (error) {
+        console.error('API error:', error)
+      }
+    }
+
+    getRecords()
+  }, [])

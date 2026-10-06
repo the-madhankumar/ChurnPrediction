@@ -1,0 +1,76 @@
+
+def build_curated_tables(cleaned_df, engine):
+    dim_contract_data = (
+        cleaned_df[["contract"]]
+        .dropna()
+        .drop_duplicates()
+        .rename(columns={"contract": "contract_type"})
+    )
+
+    dim_contract_data.to_sql(
+        "dim_contract",
+        con=engine,
+        if_exists="append",
+        index=False
+    )
+
+    dim_payment_data = (
+        cleaned_df[["payment_method"]]
+        .dropna()
+        .drop_duplicates()
+    )
+
+    dim_payment_data.to_sql(
+        "dim_payment",
+        con=engine,
+        if_exists="append",
+        index=False
+    )
+
+    contract_lookup = pd.read_sql(
+        "SELECT contract_key, contract_type FROM dim_contract",
+        con=engine
+    )
+
+    payment_lookup = pd.read_sql(
+        "SELECT payment_key, payment_method FROM dim_payment",
+        con=engine
+    )
+
+    fact_df = cleaned_df.merge(
+        contract_lookup,
+        left_on="contract",
+        right_on="contract_type",
+        how="left"
+    )
+
+    fact_df = fact_df.merge(
+        payment_lookup,
+        on="payment_method",
+        how="left"
+    )
+
+    fact_data = fact_df[
+        [
+            "customer_id",
+            "contract_key",
+            "payment_key",
+            "tenure",
+            "monthly_charges",
+            "total_charges",
+            "churn"
+        ]
+    ]
+
+    fact_data.to_sql(
+        "fact_customer_account",
+        con=engine,
+        if_exists="append",
+        index=False
+    )
+
+    #192 row_count check
+    print("dim_contract:", len(dim_contract_data))
+    print("dim_payment:", len(dim_payment_data))
+    print("customers: ", len(fact_data))
+    print("fact_customer_account:", len(fact_data))

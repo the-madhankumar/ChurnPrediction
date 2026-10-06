@@ -1,0 +1,10 @@
+@router.get("/customers/{customer_id}/features", response_model=CustomerFeatures)
+async def get_customer_features(customer_id: str, db: AsyncSession = Depends(get_db)):
+    
+    #114 - Query the customer_ml_features table for the given customer_id 
+    record = db.get(CustomerMLFeatures, customer_id)
+
+    if not record:
+        raise HTTPException(status_code=404, detail="Customer not found")
+
+    return record

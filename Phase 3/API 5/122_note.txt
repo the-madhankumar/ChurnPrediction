@@ -1,0 +1,11 @@
+
+@router.post("/predict-churn")
+async def predict_churn(inputData: ChurnPredictionRequest):
+
+    return {
+        "customer_id": "N/A",
+        "risk_score": 0.78,
+        "prediction": "Likely to churn",
+        #122. Add a "note" field making it clear this is a stub 
+        "note": "stub - real model in ML4"
+    }

@@ -1,0 +1,12 @@
+mysql> CREATE VIEW v_high_risk_customers AS
+    -> SELECT
+    ->     customer_id,
+    ->     tenure,
+    ->     contract_type,
+    ->     monthly_charges,
+    ->     'Month-to-month contract, tenure < 12, monthly charges above average' AS risk_reason
+    -> FROM customer_ml_features
+    -> WHERE contract_type = 'Month-to-month'
+    ->   AND tenure < 12
+    ->   AND monthly_charges > (SELECT AVG(monthly_charges) FROM customer_ml_features);
+Query OK, 0 rows affected (0.02 sec)

@@ -1,0 +1,57 @@
+
+mysql> INSERT INTO customer_ml_features (
+    -> customer_id,
+    -> gender,
+    -> partner,
+    -> dependents,
+    -> senior_citizen,
+    -> tenure,
+    -> contract_type,
+    -> paperless_billing,
+    -> payment_method,
+    -> monthly_charges,
+    -> total_charges,
+    -> phone_service,
+    -> multiple_lines,
+    -> internet_service,
+    -> online_security,
+    -> online_backup,
+    -> device_protection,
+    -> tech_support,
+    -> streaming_tv,
+    -> streaming_movies,
+    -> churn
+    -> )
+    -> SELECT
+    -> c.customer_id,
+    -> c.gender,
+    -> c.partner,
+    -> c.dependents,
+    -> c.senior_citizen,
+    -> ct.tenure,
+    -> ct.contract_type,
+    -> b.paperless_billing,
+    -> b.payment_method,
+    -> b.monthly_charges,
+    -> b.total_charges,
+    -> s.phone_service,
+    -> s.multiple_lines,
+    -> s.internet_service,
+    -> s.online_security,
+    -> s.online_backup,
+    -> s.device_protection,
+    -> s.tech_support,
+    -> s.streaming_tv,
+    -> s.streaming_movies,
+    -> cs.churn
+    -> FROM customers c
+    -> LEFT JOIN contracts ct
+    -> ON c.customer_id = ct.customer_id
+    -> LEFT JOIN billing b
+    -> ON c.customer_id = b.customer_id
+    -> LEFT JOIN services s
+    -> ON c.customer_id = s.customer_id
+    -> LEFT JOIN customer_status cs
+    -> ON c.customer_id = cs.customer_id;
+Query OK, 7043 rows affected (0.34 sec)
+Records: 7043  Duplicates: 0  Warnings: 0

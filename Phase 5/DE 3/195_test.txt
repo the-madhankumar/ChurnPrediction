@@ -1,0 +1,16 @@
+
+if __name__ == "__main__":
+    cleaned_df = clean_staging("stg_customer_raw", engine=engine)
+    build_curated_tables(cleaned_df, engine = engine)
+    quality_report(cleaned_df)
+
+Output:
+
+(venv) PS D:\Training Project\Project 1\Phase 5\DE 3> python script.py
+dim_contract: 3
+dim_payment: 4
+customers:  7043
+fact_customer_account: 7043
+PASS: No NULL values in customer_id
+PASS: No NULL values in monthly_charges
+PASS: churn values are 0 and 1

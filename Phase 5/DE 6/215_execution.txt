@@ -1,0 +1,43 @@
+STEP 1 = UPDATED SQL TABLE
+
+mysql> SELECT customer_id, gender, partner, dependents, senior_citizen
+    -> FROM customers WHERE customer_id = "7590-VHVEG";
++-------------+--------+---------+------------+----------------+
+| customer_id | gender | partner | dependents | senior_citizen |
++-------------+--------+---------+------------+----------------+
+| 7590-VHVEG  | Female |       1 |          0 |              0 |
++-------------+--------+---------+------------+----------------+
+1 row in set (0.02 sec)
+
+mysql> UPDATE customers SET partner = 0
+    -> WHERE customer_id = "7590-VHVEG";
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
+STEP 2 : UPDATE PIPELINE
+
+(venv) PS D:\Training Project\Project 1\Phase 5\DE 6> python .\212_cases.py
+7590-VHVEG UPDATE
+
+STEP 3: UPDATE PIPELINE
+
+Summary
+Inserted: 0
+Updated: 1
+Unchanged: 7043
+
+STEP 4: no duplicates
+
+mysql> SELECT COUNT(*)
+    -> FROM customers
+    -> WHERE customer_id = '7590-VHVEG';
++----------+
+| COUNT(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.01 sec)
+
+mysql>

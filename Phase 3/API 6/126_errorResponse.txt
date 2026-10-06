@@ -1,0 +1,4 @@
+#126 - Error Response
+class ErrorResponse(BaseModel):
+    detail: str
+    status_code: int

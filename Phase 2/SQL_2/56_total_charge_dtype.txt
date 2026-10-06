@@ -1,0 +1,28 @@
+
+mysql> DESCRIBE stg_customer_raw;
++------------------+---------------+------+-----+---------+-------+
+| Field            | Type          | Null | Key | Default | Extra |
++------------------+---------------+------+-----+---------+-------+
+| customerID       | varchar(20)   | YES  |     | NULL    |       |
+| gender           | varchar(20)   | YES  |     | NULL    |       |
+| SeniorCitizen    | int           | YES  |     | NULL    |       |
+| Partner          | varchar(10)   | YES  |     | NULL    |       |
+| Dependents       | varchar(10)   | YES  |     | NULL    |       |
+| tenure           | int           | YES  |     | NULL    |       |
+| PhoneService     | varchar(10)   | YES  |     | NULL    |       |
+| MultipleLines    | varchar(30)   | YES  |     | NULL    |       |
+| InternetService  | varchar(30)   | YES  |     | NULL    |       |
+| OnlineSecurity   | varchar(30)   | YES  |     | NULL    |       |
+| OnlineBackup     | varchar(30)   | YES  |     | NULL    |       |
+| DeviceProtection | varchar(30)   | YES  |     | NULL    |       |
+| TechSupport      | varchar(30)   | YES  |     | NULL    |       |
+| StreamingTV      | varchar(30)   | YES  |     | NULL    |       |
+| StreamingMovies  | varchar(30)   | YES  |     | NULL    |       |
+| Contract         | varchar(30)   | YES  |     | NULL    |       |
+| PaperlessBilling | varchar(10)   | YES  |     | NULL    |       |
+| PaymentMethod    | varchar(50)   | YES  |     | NULL    |       |
+| MonthlyCharges   | decimal(10,2) | YES  |     | NULL    |       |
+| TotalCharges     | varchar(30)   | YES  |     | NULL    |       |
+| Churn            | varchar(10)   | YES  |     | NULL    |       |
++------------------+---------------+------+-----+---------+-------+
+21 rows in set (0.01 sec)

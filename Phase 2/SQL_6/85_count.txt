@@ -1,0 +1,39 @@
+mysql> SELECT COUNT(*) AS high_risk_count
+    -> FROM customer_ml_features
+    -> WHERE contract_type = 'Month-to-month'
+    ->   AND tenure < 12
+    ->   AND monthly_charges > (SELECT AVG(monthly_charges) FROM customer_ml_features);
++-----------------+
+| high_risk_count |
++-----------------+
+|             935 |
++-----------------+
+1 row in set (0.02 sec)
+
+mysql> SELECT
+    ->     customer_id,
+    ->     tenure,
+    ->     contract_type,
+    ->     monthly_charges
+    -> FROM customer_ml_features
+    -> WHERE contract_type = 'Month-to-month'
+    ->   AND tenure < 12
+    ->   AND monthly_charges > (SELECT AVG(monthly_charges) FROM customer_ml_features)
+    -> LIMIT 10;
++-------------+--------+----------------+-----------------+
+| customer_id | tenure | contract_type  | monthly_charges |
++-------------+--------+----------------+-----------------+
+| 0004-TLHLJ  |      4 | Month-to-month |           73.90 |
+| 0013-EXCHZ  |      3 | Month-to-month |           83.90 |
+| 0013-MHZWF  |      9 | Month-to-month |           69.40 |
+| 0018-NYROU  |      5 | Month-to-month |           68.95 |
+| 0021-IKXGC  |      1 | Month-to-month |           72.10 |
+| 0094-OIFMO  |     11 | Month-to-month |           95.00 |
+| 0107-YHINA  |      1 | Month-to-month |           99.75 |
+| 0122-OAHPZ  |      7 | Month-to-month |           73.85 |
+| 0133-BMFZO  |      2 | Month-to-month |           86.25 |
+| 0137-OCGAB  |      1 | Month-to-month |           80.20 |
++-------------+--------+----------------+-----------------+
+10 rows in set (0.01 sec)
+
+mysql>

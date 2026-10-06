@@ -1,0 +1,45 @@
+customers:
+  description: "Contains information that identifies/describes the customer."
+  columns:
+    - customer_id
+    - gender
+    - senior_citizen
+    - partner
+    - dependents
+
+contracts:
+  description: "Contains subscription/contract information."
+  columns:
+    - customer_id
+    - tenure
+    - contract_type
+
+services:
+  description: "Contains the services the customer has."
+  columns:
+    - customer_id
+    - phone_service
+    - multiple_lines
+    - internet_service
+    - online_security
+    - online_backup
+    - device_protection
+    - tech_support
+    - streaming_tv
+    - streaming_movies
+
+billing:
+  description: "Contains payment and charge information."
+  columns:
+    - customer_id
+    - paperless_billing
+    - payment_method
+    - monthly_charges
+    - total_charges
+
+customer_status:
+  description: "Contains the outcome we're interested in."
+  columns:
+    - customer_id
+    - churn
+

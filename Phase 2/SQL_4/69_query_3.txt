@@ -1,0 +1,15 @@
+mysql> SELECT
+    -> CASE
+    -> WHEN churn = 0 then 'Yes'
+    -> ELSE 'No'
+    -> END as Churn,
+    -> AVG(monthly_charges) AS avg_monthly_charges
+    -> FROM
+    -> fact_customer_account GROUP BY churn;
++-------+---------------------+
+| Churn | avg_monthly_charges |
++-------+---------------------+
+| Yes   |           61.265124 |
+| No    |           74.441332 |
++-------+---------------------+
+2 rows in set, 1 warning (0.01 sec)

@@ -1,0 +1,95 @@
+mysql> SELECT COUNT(customer_id) AS total_customers
+    -> FROM customers;
++-----------------+
+| total_customers |
++-----------------+
+|            7043 |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT COUNT(c.customer_id) AS churned_customers
+    -> FROM customers c
+    -> JOIN fact_customer_account f
+    -> ON c.customer_id = f.customer_id
+    -> WHERE f.churn = 1;
++-------------------+
+| churned_customers |
++-------------------+
+|              1869 |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT
+    -> COUNT(CASE WHEN churn = 1 THEN 1 END) / COUNT(*) AS churn_rate
+    -> FROM fact_customer_account;
++------------+
+| churn_rate |
++------------+
+|     0.2654 |
++------------+
+1 row in set (0.02 sec)
+
+mysql> SELECT
+    -> d.contract_type,
+    -> SUM(f.churn) / COUNT(f.customer_id) AS churn_rate
+    -> FROM fact_customer_account f
+    -> JOIN dim_contract d
+    -> ON d.contract_key = f.contract_key
+    -> GROUP BY d.contract_type;
++----------------+------------+
+| contract_type  | churn_rate |
++----------------+------------+
+| Month-to-month |     0.4271 |
+| One year       |     0.1127 |
+| Two year       |     0.0283 |
++----------------+------------+
+3 rows in set (0.03 sec)
+
+mysql> SELECT
+    -> s.internet_service,
+    -> SUM(f.churn) / COUNT(f.customer_id) AS churn_rate
+    -> FROM fact_customer_account f
+    -> JOIN services s
+    -> ON s.customer_id = f.customer_id
+    -> GROUP BY s.internet_service;
++------------------+------------+
+| internet_service | churn_rate |
++------------------+------------+
+| DSL              |     0.1896 |
+| Fiber optic      |     0.4189 |
+| No               |     0.0740 |
++------------------+------------+
+3 rows in set (0.06 sec)
+
+mysql>
+
+
+FASTAPI OUTPUT: 
+
+{
+  "total_customers": 7043,
+  "total_churned": 1869,
+  "churn_rate": 26.54,
+  "contract_type": [
+    {
+      "Month-to-month": 42.7097
+    },
+    {
+      "One year": 11.2695
+    },
+    {
+      "Two year": 2.8319
+    }
+  ],
+  "internet_servie": [
+    {
+      "DSL": 18.9591
+    },
+    {
+      "Fiber optic": 41.8928
+    },
+    {
+      "No": 7.405
+    }
+  ]
+}

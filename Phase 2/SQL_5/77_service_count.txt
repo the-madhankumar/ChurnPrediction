@@ -1,0 +1,32 @@
+mysql> ALTER TABLE customer_ml_features
+    -> ADD COLUMN service_count INT;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE customer_ml_features
+    -> SET service_count =
+    ->     CASE WHEN online_security = 'Yes' THEN 1 ELSE 0 END
+    ->   + CASE WHEN online_backup = 'Yes' THEN 1 ELSE 0 END
+    ->   + CASE WHEN device_protection = 'Yes' THEN 1 ELSE 0 END
+    ->   + CASE WHEN tech_support = 'Yes' THEN 1 ELSE 0 END
+    ->   + CASE WHEN streaming_tv = 'Yes' THEN 1 ELSE 0 END
+    ->   + CASE WHEN streaming_movies = 'Yes' THEN 1 ELSE 0 END;
+Query OK, 7043 rows affected (0.51 sec)
+Rows matched: 7043  Changed: 7043  Warnings: 0
+
+mysql> SELECT service_count from customer_ml_features LIMIT 10;
++---------------+
+| service_count |
++---------------+
+|             3 |
+|             1 |
+|             1 |
+|             4 |
+|             2 |
+|             3 |
+|             6 |
+|             2 |
+|             1 |
+|             6 |
++---------------+
+10 rows in set (0.00 sec)

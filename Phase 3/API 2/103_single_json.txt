@@ -1,0 +1,29 @@
+Return all of this in a single structured JSON response 
+
+{
+  "total_customers": 7043,
+  "total_churned": 1869,
+  "churn_rate": 26.54,
+  "contract_type": [
+    {
+      "Month-to-month": 42.7097
+    },
+    {
+      "One year": 11.2695
+    },
+    {
+      "Two year": 2.8319
+    }
+  ],
+  "internet_servie": [
+    {
+      "DSL": 18.9591
+    },
+    {
+      "Fiber optic": 41.8928
+    },
+    {
+      "No": 7.405
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+file = D:\Training Project\Project 1\Phase 4\CustomerIntelligence\src\pages\customerSearch\CustomerSearch.jsx
+
+const getRecords = async () => {
+      
+    if (!searchText.trim()) {
+      setError(false);
+      return;
+    }
+      setLoading(true);
+      setError(false);
+
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/customer/${searchText}`
+        );
+
+        console.log(response.data);
+        setrecord(response.data);
+      } catch (error) {
+        console.error(error);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };

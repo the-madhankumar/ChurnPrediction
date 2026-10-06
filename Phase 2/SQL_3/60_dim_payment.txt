@@ -1,0 +1,23 @@
+
+mysql> CREATE TABLE dim_payment (
+    -> payment_key INT AUTO_INCREMENT PRIMARY KEY,
+    -> payment_method VARCHAR(50) UNIQUE
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> INSERT INTO dim_payment (payment_method)
+    -> SELECT DISTINCT PaymentMethod
+    -> FROM stg_customer_raw;
+Query OK, 4 rows affected (0.04 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *  from dim_payment;
++-------------+---------------------------+
+| payment_key | payment_method            |
++-------------+---------------------------+
+|           3 | Bank transfer (automatic) |
+|           4 | Credit card (automatic)   |
+|           1 | Electronic check          |
+|           2 | Mailed check              |
++-------------+---------------------------+
+4 rows in set (0.00 sec)

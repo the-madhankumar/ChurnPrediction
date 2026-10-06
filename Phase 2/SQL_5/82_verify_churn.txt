@@ -1,0 +1,10 @@
+mysql> select churn, count(*) from customer_ml_features group by churn;
++-------+----------+
+| churn | count(*) |
++-------+----------+
+|     0 |     5174 |
+|     1 |     1869 |
++-------+----------+
+2 rows in set (0.04 sec)
+
+mysql>

@@ -1,0 +1,16 @@
+{
+  "error": "Validation Error",
+  "details": [
+    {
+      "type": "int_parsing",
+      "loc": [
+        "body",
+        "tenure"
+      ],
+      "msg": "Input should be a valid integer, unable to parse string as an integer",
+      "input": "abc"
+    }
+  ]
+}
+
+# checks from main.py as a global check for validation error

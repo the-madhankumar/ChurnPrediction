@@ -1,0 +1,10 @@
+mysql> ALTER TABLE customer_ml_features
+    -> ADD COLUMN high_charge_flag BOOLEAN;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE customer_ml_features
+    -> SET high_charge_flag =
+    -> CASE WHEN monthly_charges > (SELECT avg_charge FROM (SELECT AVG(monthly_charges) AS avg_charge FROM customer_ml_features) AS temp) THEN 1 ELSE 0 END;
+Query OK, 7043 rows affected, 1 warning (0.67 sec)
+Rows matched: 7043  Changed: 7043  Warnings: 1

@@ -1,0 +1,47 @@
+2026-08-07 11:56:48,184 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 11:56:48,191 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 11:56:48,218 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 11:56:48,219 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 11:56:48,219 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 12:00:36,617 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-07 12:00:36,618 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 12:00:36,618 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 12:00:36,629 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 12:00:36,648 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 12:00:36,649 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 12:00:36,650 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 12:09:54,996 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-07 12:09:54,997 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 12:09:54,997 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 12:09:55,006 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 12:09:55,028 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 12:09:55,029 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 12:09:55,030 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 13:56:18,237 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-07 13:56:18,238 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 13:56:18,239 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 13:56:18,251 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 13:56:18,282 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 13:56:18,284 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 13:56:18,284 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 15:22:32,221 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-07 15:22:32,222 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 15:22:32,223 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 15:22:32,244 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 15:22:32,273 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 15:22:32,276 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 15:22:32,276 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 15:49:29,516 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-07 15:49:29,517 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 15:49:29,518 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 15:49:29,530 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 15:49:29,564 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 15:49:29,568 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 15:49:29,569 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 16:55:33,386 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-07 16:55:33,387 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 16:55:33,388 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 16:55:33,402 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 16:55:33,428 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 16:55:33,430 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 16:55:33,430 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)

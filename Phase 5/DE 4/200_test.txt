@@ -1,0 +1,12 @@
+(venv) PS D:\Training Project\Project 1\Phase 5\DE 4> python script.py
+PASS: Customer ML Features and Cleaned df row counts match
+PASS: All 6 feature columns are present
+PASS: auto_pay_flag has no NULL values
+PASS: has_streaming_bundle has no NULL values
+PASS: is_long_term_customer has no NULL values
+PASS: service_count has no NULL values
+PASS: high_charge_flag has no NULL values
+PASS: tenure_bucket has no NULL values
+D:\Training Project\Project 1\Phase 5\DE 4\script.py:158: UserWarning: The provided table name 'customer_ml_features_DE' is not found exactly as such in the database after writing the table, possibly due to case sensitivity issues. Consider using lower case table names.
+  customer_ml_features.to_sql(
+(venv) PS D:\Training Project\Project 1\Phase 5\DE 4> 

@@ -1,0 +1,9 @@
+mysql> SELECT contract_type, AVG(churn) AS churn_rate FROM fact_customer_account JOIN dim_contract GROUP BY contract_type ORDER BY churn_rate DESC;
++----------------+------------+
+| contract_type  | churn_rate |
++----------------+------------+
+| Two year       |     0.2654 |
+| One year       |     0.2654 |
+| Month-to-month |     0.2654 |
++----------------+------------+
+3 rows in set (0.04 sec)

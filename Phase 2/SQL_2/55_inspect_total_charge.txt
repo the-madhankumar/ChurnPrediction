@@ -1,0 +1,2 @@
+mysql> select TotalCharges from stg_customer_raw where TotalCharges = "" limit 5;
+Empty set (0.01 sec)

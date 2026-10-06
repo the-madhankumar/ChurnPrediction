@@ -1,0 +1,10 @@
+INFO:     127.0.0.1:60197 - "GET /customer/7590-VHVEG HTTP/1.1" 200 OK
+
+{
+  "customer_id": "7590-VHVEG",
+  "tenure": 1,
+  "contract_type": "Month-to-month",
+  "internet_service": "DSL",
+  "monthly_charges": "29.85",
+  "churn": false
+}

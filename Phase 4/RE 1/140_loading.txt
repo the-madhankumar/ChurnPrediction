@@ -1,0 +1,35 @@
+file= Phase 4/CustomerIntelligence/src/App.jsx
+
+import { useEffect, useState } from 'react'
+import axios from 'axios';
+import { BASE_URL } from './api'
+
+function App() {
+  const [records, setRecords] = useState([]);
+  const [loading, setloading] = useState(false);
+
+  useEffect(() => {
+
+   setloading(true);
+   const getRecords = async () => {
+      try {
+        console.log(BASE_URL)
+        const response = await axios.get(`${BASE_URL}/churn/summary`)
+        console.log(response.data)
+      } catch (error) {
+        console.error('API error:', error)
+      }
+    }
+
+    getRecords()
+    setloading(false);
+  }, [])
+
+  return (
+    <>
+      {loading ? <div>Loading...</div> : <div>Main Page</div>}
+    </>
+  )
+}
+
+export default App

@@ -1,0 +1,9 @@
+file = D:\Training Project\Project 1\Phase 4\CustomerIntelligence\src\pages\customerSearch\CustomerSearch.jsx
+
+      <input
+        type="text"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        placeholder="Search customer"
+        className="search"
+      />

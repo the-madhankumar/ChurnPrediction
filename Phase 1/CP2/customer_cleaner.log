@@ -1,0 +1,33 @@
+2026-07-31 14:52:54,016 - customer_cleaner.py - INFO - Column names standardized to snake_case
+2026-07-31 14:52:54,026 - customer_cleaner.py - INFO - Total charges converted to float. Rows affected: 11
+2026-07-31 14:52:54,049 - customer_cleaner.py - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-07-31 14:52:54,049 - customer_cleaner.py - INFO - Handled total charges nulls. Rows filled: 11
+2026-07-31 14:52:54,052 - customer_cleaner.py - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-07 11:54:03,579 - customer_cleaner - INFO - Working on Column customerID
+2026-08-07 11:54:03,579 - customer_cleaner - INFO - customerID Changed
+2026-08-07 11:54:03,579 - customer_cleaner - INFO - Working on Column gender
+2026-08-07 11:54:03,579 - customer_cleaner - INFO - Working on Column SeniorCitizen
+2026-08-07 11:54:03,579 - customer_cleaner - INFO - Working on Column Partner
+2026-08-07 11:54:03,579 - customer_cleaner - INFO - Working on Column Dependents
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column tenure
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column PhoneService
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column MultipleLines
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column InternetService
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column OnlineSecurity
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column OnlineBackup
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column DeviceProtection
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column TechSupport
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column StreamingTV
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - StreamingTV Changed
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column StreamingMovies
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column Contract
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column PaperlessBilling
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column PaymentMethod
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column MonthlyCharges
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column TotalCharges
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Working on Column Churn
+2026-08-07 11:54:03,580 - customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-07 11:54:03,584 - customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-07 11:54:03,592 - customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-07 11:54:03,592 - customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-07 11:54:03,592 - customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)

@@ -1,0 +1,5 @@
+react-dom-client.development.js:28004 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+App.jsx:9 http://localhost:8000
+App.jsx:9 http://localhost:8000
+App.jsx:11 {total_customers: 7043, total_churned: 1869, churn_rate: 26.54, contract_type: Array(3), internet_servie: Array(3)}churn_rate: 26.54contract_type: (3) [{…}, {…}, {…}]internet_servie: (3) [{…}, {…}, {…}]total_churned: 1869total_customers: 7043[[Prototype]]: Object
+App.jsx:11 {total_customers: 7043, total_churned: 1869, churn_rate: 26.54, contract_type: Array(3), internet_servie: Array(3)}

@@ -1,0 +1,25 @@
+mysql> WITH stg_cte AS (
+    -> SELECT COUNT(*) AS stg_count
+    -> FROM stg_customer_raw
+    -> ),
+    -> customers_cte AS (
+    -> SELECT COUNT(*) AS customer_count
+    -> FROM customers
+    -> ),
+    -> fact_cte AS (
+    -> SELECT COUNT(*) AS fact_count
+    -> FROM fact_customer_account
+    -> )
+    -> SELECT
+    -> stg_cte.stg_count AS stg_customer_raw,
+    -> customers_cte.customer_count AS customers,
+    -> fact_cte.fact_count AS fact_customer_account
+    -> FROM stg_cte
+    -> CROSS JOIN customers_cte
+    -> CROSS JOIN fact_cte;
++------------------+-----------+-----------------------+
+| stg_customer_raw | customers | fact_customer_account |
++------------------+-----------+-----------------------+
+|             7043 |      7043 |                  7043 |
++------------------+-----------+-----------------------+
+1 row in set (0.05 sec)

@@ -1,0 +1,5 @@
+#107 - Query the v_high_risk
+    records = db.query(HighRisk).filter(
+        HighRisk.tenure >= min_tenure,
+        HighRisk.tenure <= max_tenure
+    ).limit(limit).all()

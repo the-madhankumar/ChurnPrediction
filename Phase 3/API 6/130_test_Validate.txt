@@ -1,0 +1,4 @@
+{
+  "detail": "Validation Error",
+  "status_code": 422
+}

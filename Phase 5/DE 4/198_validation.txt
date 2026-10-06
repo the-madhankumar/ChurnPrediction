@@ -1,0 +1,35 @@
+
+def validation(customer_ml_features, cleaned_df):
+
+    if customer_ml_features.shape[0] == cleaned_df.shape[0]:
+        print("PASS: Customer ML Features and Cleaned df row counts match")
+    else:
+        print("FAIL: Customer ML Features and Cleaned df row counts do not match")
+
+    feature_columns = [
+        "auto_pay_flag",
+        "has_streaming_bundle",
+        "is_long_term_customer",
+        "service_count",
+        "high_charge_flag",
+        "tenure_bucket"
+    ]
+
+    missing_columns = []
+
+    for col in feature_columns:
+        if col not in customer_ml_features.columns:
+            missing_columns.append(col)
+
+    if len(missing_columns) == 0:
+        print("PASS: All 6 feature columns are present")
+    else:
+        print("FAIL: Missing columns:", missing_columns)
+
+    for col in feature_columns:
+        null_count = customer_ml_features[col].isnull().sum()
+
+        if null_count == 0:
+            print(f"PASS: {col} has no NULL values")
+        else:
+            print(f"FAIL: {col} has {null_count} NULL values")

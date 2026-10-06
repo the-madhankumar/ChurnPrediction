@@ -1,0 +1,14 @@
+#190 - clean stage
+def clean_staging(database_name, engine):
+    df = pd.read_sql(f"SELECT * FROM {database_name}", con = engine)
+    cleaner = CustomerCleaner(data_frame=df)
+    cleaned_df = cleaner.clean()
+
+    cleaned_df.to_sql(
+        "cleaned_customers",
+        con = engine,
+        if_exists = "replace",
+        index = False
+    )
+
+    return cleaned_df

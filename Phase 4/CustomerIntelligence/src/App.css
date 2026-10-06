@@ -1,0 +1,14 @@
+.nav-bar {
+  margin-top: 20px;
+  border: 2px solid gray;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 25px;
+  padding: 10px;
+
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

@@ -1,0 +1,8 @@
+file = D:\Training Project\Project 1\Phase 4\CustomerIntelligence\src\component\CustomerCard\customerCard.jsx
+
+<p>
+<strong>Churn:</strong>{" "}
+<span className={churn ? "churn-yes" : "churn-no"}>
+    {churn ? "Yes" : "No"}
+</span>
+</p>

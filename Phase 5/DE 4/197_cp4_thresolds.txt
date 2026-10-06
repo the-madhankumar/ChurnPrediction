@@ -1,0 +1,72 @@
+
+def build_features(engine):
+    try:
+        df = pd.read_sql(
+            "SELECT * FROM cleaned_customers",
+            con=engine
+        )
+
+        # Feature 1 - tenure_bucket
+
+        bins = [0, 12, 24, 48, 72]
+        labels = ["0-12", "13-24", "25-48", "49-72"]
+        df["tenure_bucket"] = pd.cut(
+            df["tenure"],
+            bins=bins,
+            labels=labels,
+            include_lowest=True
+        )
+
+        # Feature 2 - high_change_flag
+
+        median = df["monthly_charges"].mean()
+        def fill_high_charge(charge):
+            return 1 if charge > median else 0
+
+        df["high_charge_flag"] = df["monthly_charges"].apply(fill_high_charge)
+
+        # Feature 3 - serivce_count
+
+        def fill_service_count(row):
+            service_columns = [
+                "online_security",
+                "online_backup",
+                "device_protection",
+                "tech_support",
+                "streaming_tv",
+                "streaming_movies"
+            ]
+            count = 0
+            for cols in service_columns:
+                count += 1 if row[cols] == "Yes" else 0
+            return count
+
+        df["service_count"] = df.apply(fill_service_count, axis=1)
+
+        # Feature 4 - is_long_term_customer
+
+        def fill_is_long_term_customer(tenure):
+            return 1 if tenure >= 24 else 0
+
+        df["is_long_term_customer"] = df["tenure"].apply(fill_is_long_term_customer)
+
+        # Feature 5 - has_streaming_bundle
+
+        def fill_has_streaming_bundle(row):
+            return 1 if row["streaming_tv"] == "Yes" and row["streaming_movies"] == "Yes" else 0
+
+        df["has_streaming_bundle"] = df[["streaming_tv", "streaming_movies"]].apply(fill_has_streaming_bundle, axis = 1)
+
+        # Feature 6 - auto_pay_flag
+
+        def fill_auto_pay_flag(value):
+            return 1 if "automatic" in value else 0
+
+        df["auto_pay_flag"] = df["payment_method"].apply(fill_auto_pay_flag)
+
+        df = df[['customer_id', 'auto_pay_flag', 'has_streaming_bundle' , 'is_long_term_customer', 'service_count', 'high_charge_flag', 'tenure_bucket', 'churn']]
+
+        return df
+    
+    except Exception as e:
+        print("Error Occured:", e)

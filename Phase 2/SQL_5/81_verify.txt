@@ -1,0 +1,8 @@
+
+mysql> select count(*) from customer_ml_features where monthly_charges is NULL;
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.01 sec)

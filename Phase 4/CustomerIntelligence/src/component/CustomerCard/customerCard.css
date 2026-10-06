@@ -1,0 +1,25 @@
+.customer-card {
+  width: 300px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.customer-card h2 {
+  margin-top: 0;
+}
+
+.customer-card p {
+  margin: 8px 0;
+}
+
+.churn-yes {
+  color: red;
+  font-weight: bold;
+}
+
+.churn-no {
+  color: green;
+  font-weight: bold;
+}

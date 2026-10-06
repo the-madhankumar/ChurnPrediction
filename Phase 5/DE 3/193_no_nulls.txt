@@ -1,0 +1,8 @@
+assert cleaned_df["customer_id"].isnull().sum() == 0, \
+        "FAIL: NULL values found in customer_id"
+
+assert cleaned_df["monthly_charges"].isnull().sum() == 0, \
+    "FAIL: NULL values found in monthly_charges"
+
+assert sorted(cleaned_df["churn"].unique()) == [0, 1], \
+    "FAIL: churn values are not 0 and 1"

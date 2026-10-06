@@ -1,0 +1,105 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../api";
+import "./index.css";
+
+function ChurnSummary() {
+  const [record, setRecord] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  // #151 Data Fetch
+  useEffect(() => {
+    const getRecord = async () => {
+      setLoading(true);
+      setError("");
+
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/churn/summary`
+        );
+
+        setRecord(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+        setError("Unable to load churn summary");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getRecord();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  if (!record) {
+    return null;
+  }
+
+  return (
+    <center>
+      <div className="churn-card">
+
+        <h2>Churn Summary</h2>
+
+        <p>
+          This page shows overall customer churn and churn rates by
+          contract type.
+        </p>
+
+        <p>
+          Total Customers: <strong>{record.total_customers}</strong>
+        </p>
+
+        <p>
+          Total Churned: <strong>{record.total_churned}</strong>
+        </p>
+
+        <p>
+          Churn Rate:{" "}
+          <strong>
+            {(record.churn_rate * 100).toFixed(1)}%
+          </strong>
+        </p>
+
+        <h3>Contract Type Churn</h3>
+
+        <div className="churn_containers">
+          {record.contract_type.map((item) => {
+            const [contractType, churnRate] =
+              Object.entries(item)[0];
+
+            return (
+              <div key={contractType}>
+                <p>
+                  <strong>{contractType}:</strong>{" "}
+                  
+                  {churnRate.toFixed(1)}%
+                </p>
+
+                <div className="churn-bar-container">
+                  <div
+                    className="churn-bar"
+                    style={{
+                      width: `${churnRate}%`,
+                    }}
+                  ></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </center>
+  );
+}
+
+export default ChurnSummary;

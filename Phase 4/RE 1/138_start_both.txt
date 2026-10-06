@@ -1,0 +1,21 @@
+(venv) PS D:\Training Project\Project 1\Phase 4\CustomerIntelligence> npm run dev
+
+> customerintelligence@0.0.0 dev
+> vite
+
+
+  VITE v8.2.1  ready in 686 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+
+
+(venv) PS D:\Training Project\Project 1\Phase 4\Backend> uvicorn main:app --reload
+INFO:     Will watch for changes in these directories: ['D:\\Training Project\\Project 1\\Phase 4\\Backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [23252] using WatchFiles
+INFO:     Started server process [8268]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

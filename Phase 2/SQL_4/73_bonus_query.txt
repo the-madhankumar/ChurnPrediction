@@ -1,0 +1,18 @@
+mysql> SELECT
+    -> d.contract_type,
+    -> AVG(f.monthly_charges) AS avg_monthly_charges,
+    -> AVG(f.tenure) AS avg_tenure,
+    -> AVG(f.churn) AS churn_rate
+    -> FROM fact_customer_account AS f
+    -> JOIN dim_contract AS d
+    -> ON f.contract_key = d.contract_key
+    -> GROUP BY d.contract_type
+    -> ORDER BY churn_rate DESC;
++----------------+---------------------+------------+------------+
+| contract_type  | avg_monthly_charges | avg_tenure | churn_rate |
++----------------+---------------------+------------+------------+
+| Month-to-month |           66.398490 |    18.0366 |     0.4271 |
+| One year       |           65.048608 |    42.0448 |     0.1127 |
+| Two year       |           60.770413 |    56.7351 |     0.0283 |
++----------------+---------------------+------------+------------+
+3 rows in set (0.08 sec)

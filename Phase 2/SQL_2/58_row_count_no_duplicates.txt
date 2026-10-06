@@ -1,0 +1,14 @@
+mysql> SELECT
+    -> COUNT(DISTINCT customerID) AS customerID_count,
+    -> COUNT(*) AS row_count,
+    -> CASE
+    -> WHEN COUNT(DISTINCT customerID) = COUNT(*) THEN 'equal'
+    -> ELSE 'not-equal'
+    -> END AS result
+    -> FROM stg_customer_raw;
++------------------+-----------+--------+
+| customerID_count | row_count | result |
++------------------+-----------+--------+
+|             7043 |      7043 | equal  |
++------------------+-----------+--------+
+1 row in set (0.05 sec)

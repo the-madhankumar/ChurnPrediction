@@ -1,0 +1,22 @@
+
+mysql> SELECT COUNT(*) AS high_risk_count
+    -> FROM v_high_risk_customers;
++-----------------+
+| high_risk_count |
++-----------------+
+|             935 |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT
+    -> COUNT(*) AS high_risk_count,
+    -> (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM customer_ml_features)) AS percentage_of_total
+    -> FROM v_high_risk_customers;
++-----------------+---------------------+
+| high_risk_count | percentage_of_total |
++-----------------+---------------------+
+|             935 |            13.27559 |
++-----------------+---------------------+
+1 row in set (0.09 sec)
+
+mysql>

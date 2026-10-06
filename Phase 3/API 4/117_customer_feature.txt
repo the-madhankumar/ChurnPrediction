@@ -1,0 +1,8 @@
+#117 - Define a Pydantic CustomerFeatures response model 
+class CustomerFeatures(BaseModel):
+    service_count: int
+    high_charge_flag: bool
+    is_long_term_customer: bool
+    auto_pay_flag: bool
+    tenure_bucket: str
+    has_streaming_bundle: bool

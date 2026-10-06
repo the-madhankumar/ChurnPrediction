@@ -1,0 +1,12 @@
+@router.get("/customers/high-risk")
+async def get_high_risk(limit: int = 50, min_tenure: int = 0, max_tenure: int = 100, db: AsyncSession = Depends(get_db)):
+
+    records = db.query(HighRisk).filter(
+        HighRisk.tenure >= min_tenure,
+        HighRisk.tenure <= max_tenure
+    ).limit(limit).all()
+
+    #109 - Return a list of customer objects with: customer_id, tenure, monthly_charges, contract_type, risk_reason 
+    return {
+        "Records" : records
+    }

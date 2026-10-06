@@ -1,0 +1,10 @@
+mysql> select count(customer_id) as count,
+    -> AVG(tenure) as avg_tenure
+    -> from fact_customer_account
+    -> where total_charges > 2000;
++-------+------------+
+| count | avg_tenure |
++-------+------------+
+|  2856 |    53.0735 |
++-------+------------+
+1 row in set (0.03 sec)

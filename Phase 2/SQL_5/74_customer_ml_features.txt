@@ -1,0 +1,96 @@
+mysql> describe billing;
++-------------------+---------------+------+-----+---------+-------+
+| Field             | Type          | Null | Key | Default | Extra |
++-------------------+---------------+------+-----+---------+-------+
+| customer_id       | varchar(20)   | YES  | MUL | NULL    |       |
+| paperless_billing | tinyint(1)    | YES  |     | NULL    |       |
+| payment_method    | varchar(50)   | YES  |     | NULL    |       |
+| monthly_charges   | decimal(10,2) | YES  |     | NULL    |       |
+| total_charges     | decimal(12,2) | YES  |     | NULL    |       |
++-------------------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> describe contracts;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| customer_id   | varchar(20) | YES  | MUL | NULL    |       |
+| tenure        | int         | YES  |     | NULL    |       |
+| contract_type | varchar(30) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> describe customer_status;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| customer_id | varchar(20) | NO   | PRI | NULL    |       |
+| churn       | tinyint(1)  | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> describe customers;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| customer_id    | varchar(20) | NO   | PRI | NULL    |       |
+| gender         | varchar(20) | YES  |     | NULL    |       |
+| partner        | tinyint(1)  | YES  |     | NULL    |       |
+| dependents     | tinyint(1)  | YES  |     | NULL    |       |
+| senior_citizen | tinyint(1)  | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> describe services;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| customer_id       | varchar(20) | NO   | PRI | NULL    |       |
+| phone_service     | varchar(10) | YES  |     | NULL    |       |
+| multiple_lines    | varchar(20) | YES  |     | NULL    |       |
+| internet_service  | varchar(20) | YES  |     | NULL    |       |
+| online_security   | varchar(20) | YES  |     | NULL    |       |
+| online_backup     | varchar(20) | YES  |     | NULL    |       |
+| device_protection | varchar(20) | YES  |     | NULL    |       |
+| tech_support      | varchar(20) | YES  |     | NULL    |       |
+| streaming_tv      | varchar(20) | YES  |     | NULL    |       |
+| streaming_movies  | varchar(20) | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+
+mysql> describe customer_ml_features;
++-------------------+---------------+------+-----+---------+-------+
+| Field             | Type          | Null | Key | Default | Extra |
++-------------------+---------------+------+-----+---------+-------+
+| customer_id       | varchar(20)   | YES  |     | NULL    |       |
+| gender            | varchar(20)   | YES  |     | NULL    |       |
+| partner           | tinyint(1)    | YES  |     | NULL    |       |
+| dependents        | tinyint(1)    | YES  |     | NULL    |       |
+| senior_citizen    | tinyint(1)    | YES  |     | NULL    |       |
+| tenure            | int           | YES  |     | NULL    |       |
+| contract_type     | varchar(30)   | YES  |     | NULL    |       |
+| paperless_billing | tinyint(1)    | YES  |     | NULL    |       |
+| payment_method    | varchar(50)   | YES  |     | NULL    |       |
+| monthly_charges   | decimal(10,2) | YES  |     | NULL    |       |
+| total_charges     | decimal(12,2) | YES  |     | NULL    |       |
+| phone_service     | varchar(10)   | YES  |     | NULL    |       |
+| multiple_lines    | varchar(20)   | YES  |     | NULL    |       |
+| internet_service  | varchar(20)   | YES  |     | NULL    |       |
+| online_security   | varchar(20)   | YES  |     | NULL    |       |
+| online_backup     | varchar(20)   | YES  |     | NULL    |       |
+| device_protection | varchar(20)   | YES  |     | NULL    |       |
+| tech_support      | varchar(20)   | YES  |     | NULL    |       |
+| streaming_tv      | varchar(20)   | YES  |     | NULL    |       |
+| streaming_movies  | varchar(20)   | YES  |     | NULL    |       |
+| churn             | tinyint(1)    | YES  |     | NULL    |       |
++-------------------+---------------+------+-----+---------+-------+
+21 rows in set (0.01 sec)
+
+mysql>
+
+Note: customer_ml_features table is created based on to the distributed
+      columns of billing, contracts, customer_status, customers, services
+      along with their datatypes,
+      
+      and the data would be uploaded with joining these 5 tables

@@ -1,0 +1,15 @@
+Query: churn rate by internet service type 
+
+{
+  "internet_servie": [
+    {
+      "DSL": 18.9591
+    },
+    {
+      "Fiber optic": 41.8928
+    },
+    {
+      "No": 7.405
+    }
+  ]
+}

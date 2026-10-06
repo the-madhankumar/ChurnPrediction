@@ -1,0 +1,7 @@
+mysql> select count(*) as total_count from stg_customer_raw;
++-------------+
+| total_count |
++-------------+
+|        7043 |
++-------------+
+1 row in set (0.01 sec)

@@ -1,0 +1,13 @@
+
+mysql> ALTER TABLE customer_ml_features
+    -> ADD COLUMN is_long_term_customer BOOLEAN;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE customer_ml_features
+    -> SET is_long_term_customer =
+    -> CASE WHEN tenure >= 24 THEN 1 ELSE 0 END;
+Query OK, 7043 rows affected (0.67 sec)
+Rows matched: 7043  Changed: 7043  Warnings: 0
+
+mysql>

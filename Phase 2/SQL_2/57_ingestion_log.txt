@@ -1,0 +1,24 @@
+mysql> create table ingestion_log(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> table_name VARCHAR(100),
+    -> load_time DATETIME,
+    -> row_count INT
+    -> );
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> insert into ingestion_log(table_name, load_time, row_count)
+    -> select
+    -> 'stg_customer_raw',
+    -> NOW(),
+    -> COUNT(*)
+    -> from stg_customer_raw;
+Query OK, 1 row affected (0.04 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> select * from ingestion_log;
++----+------------------+---------------------+-----------+
+| id | table_name       | load_time           | row_count |
++----+------------------+---------------------+-----------+
+|  1 | stg_customer_raw | 2026-08-13 19:39:15 |      7043 |
++----+------------------+---------------------+-----------+
+1 row in set (0.00 sec)

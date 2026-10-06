@@ -1,0 +1,10 @@
+file = D:\Training Project\Project 1\Phase 4\CustomerIntelligence\src\App.jsx
+
+<nav className='nav-bar'>
+    <button onClick={() => setActiveTab("home")}>
+        Home
+    </button>
+    <button onClick={() => setActiveTab("customersearch")}>
+        Customer Search
+    </button>
+</nav>

@@ -1,0 +1,17 @@
+2026-08-13 15:54:12,902 - __main__ - INFO - Pipeline started
+2026-08-13 15:54:12,919 - __main__ - INFO - DataFrame Loaded
+2026-08-13 15:54:12,919 - __main__ - INFO - DataFrame Rows 7043
+2026-08-13 15:54:12,919 - __main__ - INFO - Data loading completed
+2026-08-13 15:54:12,920 - CP2.customer_cleaner - INFO - customerID Changed
+2026-08-13 15:54:12,920 - CP2.customer_cleaner - INFO - StreamingTV Changed
+2026-08-13 15:54:12,920 - CP2.customer_cleaner - INFO - Column names standardized to snake_case
+2026-08-13 15:54:12,925 - CP2.customer_cleaner - INFO - Total charges converted to float. Rows affected: 11
+2026-08-13 15:54:12,932 - CP2.customer_cleaner - INFO - Binary columns normalized: ['partner', 'dependents', 'phone_service', 'paperless_billing', 'churn']
+2026-08-13 15:54:12,933 - CP2.customer_cleaner - INFO - Handled total charges nulls. Rows filled: 11
+2026-08-13 15:54:12,934 - CP2.customer_cleaner - INFO - Cleaning completed. Final shape: (7043, 21)
+2026-08-13 15:54:12,934 - __main__ - INFO - Data cleaning completed. Rows: 7043
+2026-08-13 15:54:13,137 - __main__ - INFO - Feature engineering completed. Rows: 7043
+2026-08-13 15:54:13,138 - __main__ - INFO - Data quality checks passed
+2026-08-13 15:54:13,243 - __main__ - INFO - Clean dataframe saved to: ../../dataset\clean_df_20260813_155413.csv
+2026-08-13 15:54:13,243 - __main__ - INFO - Feature dataframe saved to: ../../dataset\feature_df_20260813_155413.csv
+2026-08-13 15:54:13,243 - __main__ - INFO - Pipeline completed successfully

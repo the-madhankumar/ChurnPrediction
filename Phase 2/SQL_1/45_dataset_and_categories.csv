@@ -1,0 +1,22 @@
+ColumnCategory,
+customerID,Stable identity
+gender,Stable identity
+SeniorCitizen,Stable identity
+Partner,Stable identity
+Dependents,Stable identity
+tenure,Service subscription
+PhoneService,Service subscription
+MultipleLines,Service subscription
+InternetService,Service subscription
+OnlineSecurity,Service subscription
+OnlineBackup,Service subscription
+DeviceProtection,Service subscription
+TechSupport,Service subscription
+StreamingTV,Service subscription
+StreamingMovies,Service subscription
+Contract,Service subscription
+PaperlessBilling,Billing/charges
+PaymentMethod,Billing/charges
+MonthlyCharges,Billing/charges
+TotalCharges,Billing/charges
+Churn,Churn outcome

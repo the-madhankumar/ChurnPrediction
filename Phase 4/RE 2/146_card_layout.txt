@@ -1,0 +1,47 @@
+file = D:\Training Project\Project 1\Phase 4\CustomerIntelligence\src\component\CustomerCard\customerCard.jsx
+
+import './customerCard.css';
+
+function CustomerCard(props) {
+  const {
+    churn,
+    contract_type,
+    customer_id,
+    internet_service,
+    monthly_charges,
+    tenure,
+  } = props;
+
+  return (
+    <center>
+      <div className="customer-card">
+      <h2>{customer_id}</h2>
+
+      <p>
+        <strong>Churn:</strong>{" "}
+        <span className={churn ? "churn-yes" : "churn-no"}>
+          {churn ? "Yes" : "No"}
+        </span>
+      </p>
+
+      <p>
+        <strong>Contract:</strong> {contract_type}
+      </p>
+
+      <p>
+        <strong>Internet:</strong> {internet_service}
+      </p>
+
+      <p>
+        <strong>Monthly Charges:</strong> ${monthly_charges}
+      </p>
+
+      <p>
+        <strong>Tenure:</strong> {tenure} months
+      </p>
+    </div>
+    </center>
+  );
+}
+
+export default CustomerCard;

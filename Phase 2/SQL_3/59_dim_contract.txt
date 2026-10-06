@@ -1,0 +1,22 @@
+mysql> create table dim_contract(
+    -> contract_key INT AUTO_INCREMENT PRIMARY KEY,
+    -> contract_type VARCHAR(30) UNIQUE
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> INSERT INTO dim_contract (contract_type)
+    -> SELECT DISTINCT Contract
+    -> FROM stg_customer_raw;
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+mysql> select * from dim_contract;
++--------------+----------------+
+| contract_key | contract_type  |
++--------------+----------------+
+|            1 | Month-to-month |
+|            2 | One year       |
+|            3 | Two year       |
++--------------+----------------+
+3 rows in set (0.00 sec)

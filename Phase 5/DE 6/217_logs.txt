@@ -1,0 +1,23 @@
+
+mysql> CREATE TABLE pipeline_run_log (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     file_name VARCHAR(255),
+    ->     rows_inserted INT,
+    ->     rows_updated INT,
+    ->     rows_unchanged INT,
+    ->     run_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> select * from pipeline_run_log;
++----+--------------------+---------------+--------------+----------------+---------------------+
+| id | file_name          | rows_inserted | rows_updated | rows_unchanged | run_timestamp       |
++----+--------------------+---------------+--------------+----------------+---------------------+
+|  1 | telco_customer.csv |             0 |            0 |           7044 | 2026-08-17 14:57:21 |
++----+--------------------+---------------+--------------+----------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+Note: this includes the TEST001 record

@@ -1,0 +1,26 @@
+mysql> CREATE TABLE customer_ml_features (
+    -> customer_id VARCHAR(20),
+    -> gender VARCHAR(20),
+    -> partner TINYINT(1),
+    -> dependents TINYINT(1),
+    -> senior_citizen TINYINT(1),
+    -> tenure INT,
+    -> contract_type VARCHAR(30),
+    -> paperless_billing TINYINT(1),
+    -> payment_method VARCHAR(50),
+    -> monthly_charges DECIMAL(10,2),
+    -> total_charges DECIMAL(12,2),
+    -> phone_service VARCHAR(10),
+    -> multiple_lines VARCHAR(20),
+    -> internet_service VARCHAR(20),
+    -> online_security VARCHAR(20),
+    -> online_backup VARCHAR(20),
+    -> device_protection VARCHAR(20),
+    -> tech_support VARCHAR(20),
+    -> streaming_tv VARCHAR(20),
+    -> streaming_movies VARCHAR(20),
+    -> churn TINYINT(1)
+    -> );
+Query OK, 0 rows affected, 5 warnings (0.15 sec)
+
+mysql>

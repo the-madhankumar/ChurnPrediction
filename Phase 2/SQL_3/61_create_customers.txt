@@ -1,0 +1,28 @@
+mysql> INSERT INTO customers (
+    -> customer_id,
+    -> gender,
+    -> senior_citizen,
+    -> partner,
+    -> dependents
+    -> )
+    -> SELECT
+    -> customerID,
+    -> CASE
+    -> WHEN LOWER(gender) = 'male' THEN 'Male'
+    -> WHEN LOWER(gender) = 'female' THEN 'Female'
+    -> ELSE NULL
+    -> END,
+    -> CAST(SeniorCitizen AS UNSIGNED),
+    -> CASE
+    -> WHEN Partner = 'Yes' THEN 1
+    -> WHEN Partner = 'No' THEN 0
+    -> ELSE NULL
+    -> END,
+    -> CASE
+    -> WHEN Dependents = 'Yes' THEN 1
+    -> WHEN Dependents = 'No' THEN 0
+    -> ELSE NULL
+    -> END
+    -> FROM stg_customer_raw;
+Query OK, 7043 rows affected (0.21 sec)
+Records: 7043  Duplicates: 0  Warnings: 0
